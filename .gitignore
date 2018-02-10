@@ -1,0 +1,4 @@
+http/blog/assets/bower_components
+Godeps
+vendor
+.DS_Store
