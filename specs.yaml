@@ -1,0 +1,14 @@
+# 日志样例
+log: log
+
+# 数据库连接样例
+database-mongo: database/mongo
+database-mysql: database/mysql
+database-redis: database/redis
+database-sqlite3: database/sqlite3
+
+#web服务样例
+http-welcome: http/welcome
+http-simple-mongo: http/simple-mongo
+http-simple-mysql: http/simple-mysql
+http-blog: http/blog

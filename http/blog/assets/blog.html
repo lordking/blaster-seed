@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>日志</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- HTTP 1.1 -->
+  <meta http-equiv="pragma" content="no-cache">
+  <!-- HTTP 1.0 -->
+  <meta http-equiv="cache-control" content="no-cache">
+  <!-- Prevent caching at the proxy server -->
+  <meta http-equiv="expires" content="0">
+  <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
+  <script src="bower_components/script.js/dist/script.min.js"></script>
+
+  <script type="text/javascript">
+
+    $script([
+      "bower_components/angular/angular.min.js",
+    ], function(){
+        console.log("angular ready");
+
+        $script([
+          "bower_components/angular-route/angular-route.js",
+          "bower_components/angular-cookies/angular-cookies.js",
+          "bower_components/angular-animate/angular-animate.js",
+          "bower_components/angular-aria/angular-aria.js",
+          "bower_components/angular-material/angular-material.js",
+          "bower_components/angular-base64/angular-base64.js",
+
+          "app.js",
+          "components/auth/auth.js",
+          "createblog/createblog.js",
+          "blogs/blogs.js",
+          "components/version/version.js",
+          "components/version/version-directive.js",
+          "components/version/interpolate-filter.js"
+        ], function(){
+          console.log("app ready");
+          angular.bootstrap(document, ['myApp']);
+        })
+    });
+
+  </script>
+
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <md-toolbar layout="row"  class="md-theme-teal">
+    <h1 class="md-toolbar-tools">日志</h1>
+    <h4>v<span app-version></span>&nbsp;&nbsp;</h4>
+  </md-toolbar>
+
+  <!-- 中间内容栏 -->
+  <div layout="row" ng-controller="MainCtrl">
+
+    <!-- 左边侧栏 -->
+    <md-sidenav class="md-sidenav-left md-whiteframe-2dp"  md-is-locked-open="true" style="width:200px;height:600px">
+
+        <md-list>
+
+        <md-list-item>
+          <md-button href="#/createblog" style="width:200px">创建日志</md-button>
+        </md-list-item>
+
+        <md-list-item>
+          <md-button href="#/blogs" style="width:200px">阅读日志</md-button>
+        </md-list-item>
+
+        <md-list-item>
+          <md-button ng-click="logout()" style="width:200px">退出日志</md-button>
+        </md-list-item>
+
+        </md-list>
+
+      <div layout="row" layout-align="center end">
+        {{ '当前版本: v%VERSION%' | interpolate }}
+      </div>
+
+    </md-sidenav>
+
+    <!-- 右边内容栏 -->
+    <md-content flex id="content"  layout-margin="2">
+        <div ng-view></div>
+    </md-content>
+
+  </div>
+
+</body>
+</html>

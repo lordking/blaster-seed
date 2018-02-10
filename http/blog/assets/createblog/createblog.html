@@ -1,0 +1,45 @@
+<div class="md-whiteframe-1dp">
+	<md-toolbar style="background-color: #29B6F6;" layout="row">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">创建日志</h2>
+		</div>
+	</md-toolbar>
+
+	<md-content flex style="height:400px" layout-padding=2>
+
+		<form name="blogForm">
+		<div layout-gt-sm="row">
+
+		    <md-input-container flex class="md-block">
+	        	<label>标题:</label>
+	        	<input name="subject" required ng-model="blog.subject">
+	        	<div ng-messages="blogForm.subject.$error" ng-show="showHints.subject">
+          			<div ng-message="required">标题没有填写.</div>
+        		</div>
+	        </md-input-container>
+
+	        <md-input-container class="md-block">
+	        	<label>作者:</label>
+	        	<input name="author" required ng-model="blog.author">
+	        	<div ng-messages="blogForm.author.$error" ng-show="showHints.author" >
+          			<div ng-message="required">作者没有填写.</div>
+        		</div>
+	        </md-input-container>
+		</div>
+
+        <md-input-container flex class="md-block">
+        	<label>内容</label>
+        	<textarea name="blog" required ng-model="blog.blog"></textarea>
+        	<div ng-messages="blogForm.blog.$error" ng-show="showHints.blog">
+        		<div ng-message="required">内容没有填写.</div>
+        	</div>
+        </md-input-container> 
+
+		<div layout="row" layout-align="center center">
+        	<md-button class="md-primary md-raised" ng-click="save($event)" style="width:200px">提交</md-button>
+		</div>
+
+		</form>
+
+	</md-content>
+</div>

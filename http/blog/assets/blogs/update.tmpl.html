@@ -1,0 +1,53 @@
+<md-dialog aria-label="修改日志" ng-cloak layout-md="row"	>
+<form name="blogForm">
+
+	<md-toolbar style="background-color: #29B6F6;">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">修改日志</h2>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+	<div class="md-dialog-content" style="width:600px">
+
+		<div layout-md="row" flex-md>
+
+			<md-input-container flex class="md-block">
+	        	<label>标题:</label>
+	        	<input name="subject" required ng-model="blog.subject">
+	        	<div ng-messages="blogForm.subject.$error" ng-show="showHints.subject">
+          			<div ng-message="required">标题没有填写.</div>
+        		</div>
+	        </md-input-container>
+
+	        <md-input-container flex class="md-block">
+	        	<label>作者:</label>
+	        	<input name="author" required ng-model="blog.author" disabled>
+	        </md-input-container>
+
+	    </div>
+
+        <md-input-container class="md-block">
+        	<label>内容</label>
+        	<textarea name="blog" required ng-model="blog.blog"></textarea>
+        	<div ng-messages="blogForm.blog.$error" ng-show="showHints.blog">
+        		<div ng-message="required">内容没有填写.</div>
+        	</div>
+        </md-input-container> 
+
+	</div>
+	</md-dialog-content>
+
+	<md-dialog-actions layout="row">
+
+	 <md-button ng-click="cancel()">
+       不修改
+      </md-button>
+      <md-button ng-click="answer()" style="margin-right:20px;">
+        确定修改
+      </md-button>
+
+	</md-dialog-actions>
+
+</form>
+</md-dialog>

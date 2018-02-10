@@ -1,0 +1,19 @@
+log:
+  level: debug
+  production: false
+
+http:
+  port: :8000
+  sslport: :8443
+  sslcert: ./config/cert.pem
+  sslkey: ./config/key.pem
+  production: true
+
+database:
+  host: 127.0.0.1
+  port: :3306
+  username: root
+  password: ~
+  MaxOpenConns: 200
+  MaxIdleConns: 100
+  database: sample

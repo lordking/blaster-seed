@@ -1,0 +1,12 @@
+log:
+  level: "debug"
+  production: false
+
+database:
+  host: "127.0.0.1"
+  port: ":3306"
+  username: "root"
+  password: ""
+  MaxOpenConns: 200
+  MaxIdleConns: 100
+  database: "sample"

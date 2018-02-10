@@ -1,0 +1,7 @@
+log:
+  level: "debug"
+  production: false
+
+database:
+  url: "127.0.0.1"
+  database: "sample"

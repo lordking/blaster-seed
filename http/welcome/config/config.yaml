@@ -1,0 +1,10 @@
+log:
+  level: debug
+  production: false
+
+http:
+  port: :8000
+  sslport: :8443
+  sslcert: ./config/cert.pem
+  sslkey: ./config/key.pem
+  production: true

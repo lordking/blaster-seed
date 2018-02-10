@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>日志</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- HTTP 1.1 -->
+  <meta http-equiv="pragma" content="no-cache">
+  <!-- HTTP 1.0 -->
+  <meta http-equiv="cache-control" content="no-cache">
+  <!-- Prevent caching at the proxy server -->
+  <meta http-equiv="expires" content="0">
+  <link href="./bower_components/angular-material/angular-material.css" rel="stylesheet" />
+  <script src="bower_components/script.js/dist/script.min.js"></script>
+
+  <script type="text/javascript">
+
+    $script([
+      "bower_components/angular/angular.min.js",
+    ], function(){
+        console.log("angular ready");
+
+        $script([
+          "bower_components/angular-route/angular-route.js",
+          "bower_components/angular-cookies/angular-cookies.js",
+          "bower_components/angular-animate/angular-animate.js",
+          "bower_components/angular-aria/angular-aria.js",
+          "bower_components/angular-material/angular-material.js",
+          "bower_components/angular-base64/angular-base64.js",
+          "login.js",
+          "components/auth/auth.js",
+          "components/version/version.js",
+          "components/version/version-directive.js",
+          "components/version/interpolate-filter.js"
+        ], function(){
+          console.log("app ready");
+          angular.bootstrap(document, ['myApp']);
+        })
+    });
+
+  </script>
+
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <md-toolbar layout="row"  class="md-theme-teal">
+    <h1 class="md-toolbar-tools">日志</h1>
+    <h4>v<span app-version></span>&nbsp;&nbsp;</h4>
+  </md-toolbar>
+
+  <!-- 中间内容栏 -->
+  <md-content flex layout-padding=2 layout="row" layout-align="center center" ng-controller="loginCtrl">
+
+    <div class="md-whiteframe-1dp" layout="column" style="width:400px; height:400px" >
+
+      <md-toolbar style="background-color: #29B6F6;" layout="row">
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">系统登录</h2>
+        </div>
+      </md-toolbar>
+      <form name="loginForm">
+        <div flex>&nbsp;</div>
+
+          <md-input-container flex class="md-block">
+            <label>用户名</label>
+            <input name="username" required ng-model="user.username"/>
+            <div ng-messages="loginForm.username.$error" ng-show="showHints.username">
+              <div ng-message="required">用户名没有填写.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex class="md-block">
+            <label>密码</label>
+            <input name="password" type="password"  required ng-model="user.password" />
+            <div ng-messages="loginForm.password.$error" ng-show="showHints.password">
+              <div ng-message="required">密码没有填写.</div>
+            </div>
+          </md-input-container>
+
+          <div layout="row" layout-align="center center">
+            <md-button class="md-primary md-raised" ng-click="login($event)" style="width:200px">登录</md-button>
+          </div>
+          <div flex>&nbsp;</div>
+          <div layout="row" layout-align="center center">
+            <div ng-messages="loginResult != null">
+              <div ng-message-exp="true" style="color:#ed6b18">{{loginResult}}</div>
+            </div>
+
+          </div>
+
+    </form>
+    </div>
+  </md-content>
+
+  </body>
+
+  </html>

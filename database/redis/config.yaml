@@ -1,0 +1,9 @@
+log:
+  level: "debug"
+  production: false
+
+redis:
+  host: "127.0.0.1"
+  port: ":6379"
+  maxIdle: 3
+  idleTimeout: 240
