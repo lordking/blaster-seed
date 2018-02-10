@@ -46,7 +46,7 @@ sslcert | HTTPS需要的证书文件的相对路径。
 sslkey  | HTTPS需要的公钥文件的相对路径。
 ssl_cert和ssl_key的生成方式是：
 
-```bash
+```shell
 $ go run $GOROOT/src/crypto/tls/generate_cert.go --host="localhost"
 ```
 
@@ -77,7 +77,7 @@ $ go get -u github.com/stretchr/testify/assert
 
 ## 2 编译运行
 
-```bash
+```shell
 $ go build
 $ ./blog serve
 ```
@@ -98,7 +98,7 @@ $ go run main.go serve
 
 ### 3.1 用户登录接口测试
 
-```bash
+```shell
 $ cd test
 $ go test -v -test.run Test_Login
 ```
@@ -117,7 +117,7 @@ $ go test -v -test.run Test_Create
 
 #### 3.3 查询日志
 
-```bash
+```shell
 $ go test -v -test.run Test_Find
 ```
 
@@ -131,7 +131,7 @@ $ go test -v -test.run Test_Find
 
 再运行一下测试
 
-```bash
+```shell
 $ go test -v -test.run Test_Update
 ```
 
@@ -145,7 +145,7 @@ $ go test -v -test.run Test_Update
 
 再运行一下测试
 
-```bash
+```shell
 $ go test -v -test.run Test_Delete
 ```
 
