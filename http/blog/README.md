@@ -5,7 +5,7 @@ blog样例，是mongodb + restapi + webapp的样例。
 
 ## 1 编译运行前准备
 
-## 1.1  安装js库
+## 安装js库
 
 运行之前，除go语言环境外先要安装js库。步骤如下：
 
@@ -15,13 +15,18 @@ blog样例，是mongodb + restapi + webapp的样例。
 
 - 如果没有bower, 安装。
 
+```shell
 $ sudo npm install -g bower
+```
 
 - 安装js库
 
-$ cd blog $ bower install
+```shell
+$ cd blog
+$ bower install
+```
 
-## 1.2 配置说明
+## 配置说明
 
 所有配置文件均放置在config目录下，内容以YAML格式存放。
 
@@ -79,7 +84,7 @@ $ ./blog serve
 
 或者
 
-```
+```shell
 $ go run main.go serve
 ```
 
@@ -106,7 +111,7 @@ $ go test -v -test.run Test_Login
 
 #### 3.2 创建日志
 
-```
+```shell
 $ go test -v -test.run Test_Create
 ```
 
@@ -143,3 +148,4 @@ $ go test -v -test.run Test_Update
 ```bash
 $ go test -v -test.run Test_Delete
 ```
+

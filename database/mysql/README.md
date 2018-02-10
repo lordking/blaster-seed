@@ -33,6 +33,6 @@ CREATE TABLE `person` (
 
 ## 运行样例
 
-```
+```shell
 $ go run main.go person.go
 ```

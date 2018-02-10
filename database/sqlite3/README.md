@@ -40,13 +40,13 @@ $ go get -u github.com/mattn/go-sqlite3
 
 ## 运行样例
 
-```
-go run main.go person.go
+```shell
+$ go run main.go person.go
 ```
 
 ## 编译
 
-```
+```shell
 # Mac下编译
-go build --tags "libsqlite3 darwin"
+$ go build --tags "libsqlite3 darwin"
 ```

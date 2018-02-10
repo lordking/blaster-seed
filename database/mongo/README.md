@@ -19,6 +19,7 @@ $ go get -u gopkg.in/mgo.v2
 
 ## 运行样例
 
+```shell
+$ go run main.go person.go
 ```
-go run main.go person.go
-```
+

@@ -18,6 +18,6 @@ $ go get -u github.com/garyburd/redigo/redis
 
 ## 运行样例
 
-```
-go run main.go person.go
+```shell
+$ go run main.go person.go
 ```

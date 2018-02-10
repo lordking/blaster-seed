@@ -5,7 +5,7 @@ simple-mongo样例，一个最基础的mongodb + http rest api的样例
 
 ## 1 编译运行前准备
 
-## 1.1 配置说明
+## 配置说明
 
 所有配置文件均放置在config目录下，内容以YAML格式存放。
 
@@ -56,14 +56,14 @@ $ go get -u github.com/stretchr/testify/assert
 
 ## 2 编译运行
 
-```
+```shell
 $ go build
 $ ./simple-mongo serve
 ```
 
 或
 
-```
+```shell
 $ go run main.go serve
 ```
 
@@ -71,7 +71,7 @@ $ go run main.go serve
 
 ### 3.1 单元测试
 
-```
+```shell
  $ cd test
  $ go test -v --test.run Test_Create
  $ go test -v --test.run Test_Find
@@ -81,7 +81,7 @@ $ go run main.go serve
 
 ### 3.2 性能测试
 
-```
+```shell
  $ cd benchmark/benchmark
  $ go run main.go -m RequestCreate
  $ go run main.go -m RequestFind
